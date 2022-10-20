@@ -16,6 +16,6 @@ repository = "https://github.com/dejaime/moderator"
 # ---------------------------------------------------------------- #
 
 [dependencies]
-# This currently resolves to 0.9.0-dev, and I will be using the Main branch 
-#	in this crate until I've got something useful.
-bevy = { git = "https://github.com/bevyengine/bevy", version = "0.9.0-dev" }
+# Changing bevy version to 0.8.1 here, but I will soon be using
+# 	the Main branch (currently resolving to 0.9.0-dev) until I've got something useful.
+bevy = { version = "0.8.1" }
