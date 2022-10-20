@@ -1,12 +1,14 @@
 [package]
 name = "moderator"
 description = "A very experimental crate for mod support in Bevy Game Engine games"
+authors = ["Dejaime de Oliveira <contact@dejai.me>"]
+license = "MIT OR Apache-2.0"
 version = "0.0.1"
 edition = "2021"
 
-authors = ["Dejaime de Oliveira <contact@dejai.me>"]
 homepage = "https://dejai.me/moderator"
-license = "MIT OR Apache-2.0"
+documentation = "https://dejai.me/moderator/docs"
+repository = "https://github.com/dejaime/moderator"
 
 readme = "README.md"
 
