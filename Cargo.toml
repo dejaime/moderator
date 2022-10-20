@@ -18,4 +18,5 @@ repository = "https://github.com/dejaime/moderator"
 [dependencies]
 # Changing bevy version to 0.8.1 here, but I will soon be using
 # 	the Main branch (currently resolving to 0.9.0-dev) until I've got something useful.
-bevy = { version = "0.8.1" }
+# Bevy is currently breaking due to usage of an experimental feature `derive_default_enum`
+# bevy = { version = "0.8.1" } 
