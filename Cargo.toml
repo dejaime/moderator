@@ -1,5 +1,6 @@
 [package]
 name = "moderator"
+description = "A very experimental crate for mod support in Bevy Game Engine games"
 version = "0.0.1"
 edition = "2021"
 
