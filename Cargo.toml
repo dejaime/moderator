@@ -1,0 +1,21 @@
+[package]
+name = "moderator"
+version = "0.0.1"
+edition = "2021"
+
+authors = ["Dejaime de Oliveira <contact@dejai.me>"]
+homepage = "https://dejai.me/moderator"
+license = "MIT OR Apache-2.0"
+
+readme = "README.md"
+
+categories = ["game-engines", "api-bindings", "game-development"]
+keywords = ["bevy", "game", "engine", "gamedev", "mod", "modding"]
+repository = "https://github.com/dejaime/moderator"
+
+# ---------------------------------------------------------------- #
+
+[dependencies]
+# This currently resolves to 0.9.0-dev, and I will be using the Main branch 
+#	in this crate until I've got something useful.
+bevy = { git = "https://github.com/bevyengine/bevy" }
