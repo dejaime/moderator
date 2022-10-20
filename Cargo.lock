@@ -1598,6 +1598,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a257582fdcde896fd96463bf2d40eefea0580021c0712a0e2b028b60b47a837a"
 
 [[package]]
+name = "inherent"
+version = "1.0.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2fb971b57a573f221e77621bea15a412033924a30beb9511fa2867572e41ea0e"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "inotify"
 version = "0.9.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1870,6 +1881,7 @@ name = "moderator"
 version = "0.0.1"
 dependencies = [
  "bevy",
+ "inherent",
 ]
 
 [[package]]
