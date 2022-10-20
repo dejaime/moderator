@@ -10,7 +10,7 @@ license = "MIT OR Apache-2.0"
 readme = "README.md"
 
 categories = ["game-engines", "api-bindings", "game-development"]
-keywords = ["bevy", "game", "engine", "gamedev", "mod", "modding"]
+keywords = ["bevy", "gamedev", "mod", "modding"]
 repository = "https://github.com/dejaime/moderator"
 
 # ---------------------------------------------------------------- #
