@@ -2,7 +2,7 @@
 name = "moderator"
 description = "A very experimental crate for mod support in Bevy Game Engine games"
 authors = ["Dejaime de Oliveira <contact@dejai.me>"]
-license = "MIT OR Apache-2.0"
+license = "MIT OR Apache-2.0 (with or without LLVM-exception)"
 version = "0.0.1"
 edition = "2021"
 
@@ -19,5 +19,5 @@ keywords = ["bevy", "gamedev", "mod", "modding"]
 
 [dependencies]
 # I will be using the `main` branch (currently resolving to 0.9.0-dev) until I've got something useful.
-bevy = {  git = "https://github.com/bevyengine/bevy" } 
-inherent = "1.0.2"
+bevy = {  git = "https://github.com/bevyengine/bevy" }
+wit-bindgen = { version = "0.0.0" }
