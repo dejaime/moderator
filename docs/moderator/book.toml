@@ -1,0 +1,6 @@
+[book]
+authors = ["Dejaime de Oliveira <contact@dejai.me>"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Moderator"
