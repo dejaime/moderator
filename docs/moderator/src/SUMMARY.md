@@ -1,4 +1,4 @@
 # Summary
 
 - [Motivation](./Motivation.md)
-  - [Language](./Language.md)
+  - [Scripting](./Scripting.md)

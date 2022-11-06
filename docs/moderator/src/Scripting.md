@@ -1,5 +1,4 @@
-# What Language will we use?
- 
+
 ## But First, Some Context
  
 Languages such as `Lua`, `Python`, `JavaScript` (and family) have very straightforward ways to create plugin systems or hot reload code. Many of these languages also have wrappers available that allows them to be easily integrated with `C`-compatible codebases. This opens a door to a very wide range of language integrations, but usually with relatively high runtime cost for context switching and/or data exchange.
