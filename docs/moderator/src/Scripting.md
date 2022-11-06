@@ -95,7 +95,18 @@ If you want Fast and Easy to use, but do not care for Safe or Stable, Mun takes 
  
 If you need Fast and Safe, WASM is for you.
  
-If you're a masochist and want to fight the ABI on every single platform you're supporting... If you like to over-engineer every single aspect of your code and want to squeeze out that extra 5% FPS with manual `cdylib` loading... If you're a sadistic host who wants your modding community to learn how to create cross-platform dynamic library code... you have my blessing. You can now use Rust in Rust with the C ABI. Now go. Preach the way.
+If you're a masochist and want to fight the ABI on every single platform you're supporting... If you like to over-engineer every single aspect of your code and want to squeeze out that extra 5% FPS with manual `cdylib` loading... If you're a sadistic host who wants your modding community to learn how to create cross-platform dynamic library code... you have my blessing. You can now use `Rust` in `Rust` with the `C ABI`. Now go. Preach the way.
  
  
 
+### Conclusion
+
+I am definitely both a sadist and a masochist, and that's why I'll be supporting direct `Rust` integration. This is inspired by the work of the [Godot](https://godotengine.org) team with [GDNative](https://docs.godotengine.org/en/stable/classes/class_gdnative.html) and also the amazing content available online by the likes of [FasterThanLime](https://fasterthanli.me/articles/so-you-want-to-live-reload-rust). With this I hope to learn more about `Rust` programming, libc and why some programs always break when libc updates. This enables us to create trusted first party content as a direct `Rust` addons. Useful for DLCs and expansions, makes modder's lives easier when your community decide it need a [script extender](http://skse.silverlock.org/) (note the dll, exe files).
+
+But I'm also nothing if not a practical person, and I know most game developers and mod developers would rather have an easier modding experience than integrating via the `C ABI`. Again, this would also be useful for first party content, but would give a much more productive and ergonomic development environment. Not only for your modding community, but also for the Game Developers themselves, if they decide they'd like to use this in their main content creation pipeline.
+
+With all that said, I will start my research by experimenting with `Mun`. `Mun` is fairly new but is already a few years old and still under very active development. Considering stability here, this is good enough considering this is targeting `Bevy` users. If you're using the `Bevy` game engine, you're probably not going to be swayed by a library being "just a few years old".
+
+Right after that, I'll try my hand with `WASM`, and see how well I can intrgrate `wasmer` with a sane API in a `Bevy` game context, and see how it compares to using `Mun`.
+
+Direct `Rust` integration is the last thing I'll research. I see this as an *eventual must have*, but lower priority than having a more ergonomic alternative in place.
