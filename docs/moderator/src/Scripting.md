@@ -3,7 +3,7 @@
  
 Languages such as `Lua`, `Python`, `JavaScript` (and family) have very straightforward ways to create plugin systems or hot reload code. Many of these languages also have wrappers available that allows them to be easily integrated with `C`-compatible codebases. This opens a door to a very wide range of language integrations, but usually with relatively high runtime cost for context switching and/or data exchange.
  
-On the other side of the coin, `C` uses [ABI](https://en.wikipedia.org/wiki/Application_binary_interface) to allow loading of dynamic code. In Unix-land that's usually a `.so` file, or a `.dll` on windows. This allows us to integrate `C`, `C++` and `Rust` code directly. The big advantage in this case is that, differently from the languages mentioned above, this kind of integration has very little extra runtime cost, if any. On the downside, this type of integration is highly technical for both sides of the integration: base program development and plugin development. There are other downsides to this, but I guess complexity, security and stability covers most of it.
+On the other side of the coin, `C` uses [ABI](https://en.wikipedia.org/wiki/Application_binary_interface) to allow loading of dynamic code. In Unix-land that's usually a `.so` file, or a `.dll` on windows. This allows us to integrate `C`, `C++` and `Rust` code directly. The big advantage in this case is that, differently from the languages mentioned above, this kind of integration has very little extra runtime cost, if any. On the downside, this type is highly technical for both sides of the integration: the host program (game) developer and the plugin (mod) developer. There are also other downsides to this, but I guess complexity, security and stability covers most of it. If you want the longer version, read on.
  
 ## Rust in Rust Integration and Security
  
@@ -15,11 +15,9 @@ Integrating `Rust` directly in your game through a `cdylib` opens it up to liter
  - Collect and send arbitrary data to servers (e.g. make HTTP requests)
  - Download and execute malware
  
-This is due to the fact that sandboxing this kind of code is practically impossible. We could ship the game with a modified standard library to try and stop people from making HTTP requests, but that's easily circumvented by using LDPRELOAD or any of the other multitude of ways. It is arbitrary code after all!
+This is due to the fact that sandboxing this kind of code is practically impossible. We could ship the game with a modified standard library to try and stop people from making HTTP requests, but that's easily circumvented by using LDPRELOAD or in another multitude of ways. It is arbitrary code after all!
  
-But again, this is an almost zero runtime cost way to integrate code, and also the most powerful one as one could possibly overwrite entire game systems with relative ease.
- 
-With all of the above said, `Rust` in `Rust` is a great option with the assumption that the code comes from trusted sources. This makes this type of integration ideal for things like DLCs or any official expansions.
+But again, this type of integration has a very low runtime cost, and is also the most powerful one as one could possibly overwrite entire game systems with relative ease. With all of the above said, `Rust` in `Rust` is a great option with the assumption that the code comes from trusted sources. This makes this type of integration ideal for things like DLCs or any official expansions.
  
 On the other hand, allowing arbitrary code to easily be executed outside of a sandbox is always a huge problem. Still it's easy to find examples of big games with big mods that use that type of integration. If you ever played the Enderal Skyrim mod you probably remember you had to download and run the `Enderal Launcher.exe` in order to play with the mod, even if this kind of integration was not directly supported in the game. The same can be said about Stardew Valley and the SMAPI mod tool.
  
@@ -79,14 +77,15 @@ Cons:
  
 With this absolutely scientific and statistically relevant blurb of not anecdotal words with 100% objectivelly deterministic metrics, this is the proven truth given you by science!
  
-|   |Fast|Safe|Ergonomic|Stable|
-|---|---|---|---|---|
-|Rust cdylib|X| | |X|
-|Lua||X|X|X|
-|Mun|X| |X||
-|WASM|X|X|X||
-|Java*||Log4J||
+|   |Flexible|Fast|Safe|Ergonomic|Stable|
+|---|---|---|---|---|---|
+|Rust cdylib|X|X| | |X|
+|Lua|X||X|X|X|
+|Mun|X|X| |X||
+|WASM|X|X|X|X||
+|Java*|||Log4J||
  
+<sup>* - just wanted to bash Java</sup>
  
 With this, the choices are clear:
  
@@ -96,8 +95,7 @@ If you want Fast and Easy to use, but do not care for Safe or Stable, Mun takes 
  
 If you need Fast and Safe, WASM is for you.
  
-If you're a masochist and want to fight the ABI on every single platform you're supporting... If you like to over-engineer every single aspect of your code and want to squeeze out that extra 5% FPS with manual `cdylib` loading... If you're a sadistic host that wants all your modding community to learn how to create cross-platform dynamic library code... you have my blessing. You can not use Rust in Rust with the C ABI. Now go. Preach the way.
+If you're a masochist and want to fight the ABI on every single platform you're supporting... If you like to over-engineer every single aspect of your code and want to squeeze out that extra 5% FPS with manual `cdylib` loading... If you're a sadistic host who wants your modding community to learn how to create cross-platform dynamic library code... you have my blessing. You can now use Rust in Rust with the C ABI. Now go. Preach the way.
  
  
-<sup>* - just wanted to bash Java</sup>
 
